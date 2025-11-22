@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NP Arquitetura Design Engenharia Manutencao e Construcao Ltda - Integrated architecture, engineering, and maintenance services in Brasilia, DF. Led by Nathalia Pimenta.">
+    <title>NATHALIA PIMENTA | Arquitetura e Design</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           1. VARIABLES & RESET
+           ========================================= */
+        :root {
+            --primary-dark: #2d3436;        /* Charcoal - Architecture */
+            --accent-gold: #d4ac0d;         /* Gold - Design/Quality */
+            --bg-light: #f9f9f9;            /* Paper White */
+            --white: #ffffff;
+            --text-gray: #636e72;
+            --container-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--text-gray);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        a { text-decoration: none; transition: 0.3s; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+
+        /* =========================================
+           2. UTILITIES
+           ========================================= */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-header span {
+            display: block;
+            color: var(--accent-gold);
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            font-weight: 400;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background-color: var(--primary-dark);
+            color: var(--white);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid var(--primary-dark);
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--primary-dark);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary-dark);
+        }
+
+        /* =========================================
+           3. HEADER
+           ========================================= */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 85px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent-gold);
+            font-style: italic;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 35px;
+        }
+
+        .nav-menu a {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* =========================================
+           4. HERO SECTION
+           ========================================= */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(45, 52, 54, 0.6), rgba(45, 52, 54, 0.5)),
+                        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); /* Modern Architecture */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 85px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            color: var(--white);
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+            color: #f1f1f1;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* =========================================
+           5. ABOUT US
+           ========================================= */
+        .about {
+            background-color: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+            color: #555;
+        }
+
+        .about-header-small {
+            font-size: 0.9rem;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .signature-box {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .signature-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        .signature-role {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+        }
+
+        .about-img img {
+            box-shadow: 20px 20px 0 var(--bg-light);
+        }
+
+        /* =========================================
+           6. SERVICES
+           ========================================= */
+        .services {
+            background-color: var(--bg-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 50px 35px;
+            text-align: left;
+            transition: 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+            border-bottom-color: var(--accent-gold);
+        }
+
+        .service-icon {
+            font-size: 2.2rem;
+            color: var(--primary-dark);
+            margin-bottom: 25px;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: #777;
+        }
+
+        /* =========================================
+           7. ADVANTAGES
+           ========================================= */
+        .advantages {
+            background-color: var(--primary-dark);
+            color: var(--white);
+        }
+
+        .advantages .section-header h2 { color: var(--white); }
+        
+        .adv-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+        }
+
+        .adv-item {
+            text-align: center;
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .adv-item h4 {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            margin-top: 15px;
+        }
+
+        .adv-item p {
+            color: #b2bec3;
+            font-weight: 300;
+        }
+
+        .adv-icon-small {
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        /* =========================================
+           8. PROCESS
+           ========================================= */
+        .process {
+            background-color: var(--white);
+        }
+
+        .process-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .process-container::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: #e0e0e0;
+            z-index: 0;
+        }
+
+        .step {
+            position: relative;
+            z-index: 1;
+            background: var(--white);
+            padding: 0 20px;
+            width: 30%;
+            text-align: center;
+        }
+
+        .step-num {
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            border: 1px solid var(--primary-dark);
+            color: var(--primary-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        /* =========================================
+           9. CONTACT FORM
+           ========================================= */
+        .contact {
+            background-color: var(--bg-light);
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            background: var(--white);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.05);
+        }
+
+        .contact-info {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 60px;
+        }
+
+        .contact-info h3 {
+            color: var(--white);
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .info-block {
+            margin-bottom: 30px;
+        }
+
+        .info-block span {
+            display: block;
+            color: var(--accent-gold);
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .info-block p {
+            font-size: 1.1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .contact-form {
+            padding: 60px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            background: transparent;
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-bottom-color: var(--accent-gold);
+        }
+
+        textarea.form-control {
+            height: 120px;
+            resize: none;
+        }
+
+        .btn-submit {
+            width: 100%;
+            border: none;
+        }
+
+        /* =========================================
+           10. FOOTER
+           ========================================= */
+        footer {
+            background-color: #222;
+            color: #777;
+            padding: 60px 0;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 992px) {
+            .hero-content h1 { font-size: 3rem; }
+            .about-grid, .services-grid, .adv-grid, .contact-wrapper { grid-template-columns: 1fr; }
+            .process-container { flex-direction: column; gap: 40px; }
+            .process-container::before { display: none; }
+            .step { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">NP <span>ARQUITETURA</span></div>
+            <nav class="nav-menu">
+                <a href="#about">Profile</a>
+                <a href="#services">Services</a>
+                <a href="#process">Process</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Bridging Vision and Structure.</h1>
+            <p>NP Arquitetura Design Engenharia Manutencao e Construcao Ltda offers a complete lifecycle approach to building in Brasilia. From the first sketch to the final build and ongoing maintenance.</p>
+            <a href="#contact" class="btn btn-outline">Consult Our Experts</a>
+        </div>
+    </section>
+
+    <section id="about" class="about section-padding">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <span class="about-header-small">Our Firm</span>
+                    <h3>Design Integrity & Engineering Precision</h3>
+                    <p>Operating under the name <strong>Nathalia Pimenta Arquitetura e Design</strong>, we are a multidisciplinary firm based in Brasilia, Distrito Federal. We do not believe in separating the beauty of architecture from the rigor of engineering.</p>
+                    <p>Led by Nathalia De Sousa Da Silva Pimenta, our firm handles the full spectrum of nonresidential construction. We merge aesthetic consulting with heavy construction capabilities, ensuring that what is designed is buildable, sustainable, and beautiful.</p>
+                    <p>Our scope extends beyond the handover; we offer "Manutencao" (Maintenance) services to ensure your asset retains its value and functionality for years to come.</p>
+                    
+                    <div class="signature-box">
+                        <div class="signature-name">Nathalia De Sousa Da Silva Pimenta</div>
+                        <div class="signature-role">Principal Architect & Director</div>
+                    </div>
+                </div>
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Architecture and Engineering Office">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span>Capabilities</span>
+                <h2>Integrated Solutions</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">&#9998;</div> <h3>Architectural Design</h3>
+                    <p>Creative conceptualization and spatial planning. We design functional, aesthetic environments that align with your brand identity and operational needs.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">&#9874;</div> <h3>Construction & Engineering</h3>
+                    <p>Execution of nonresidential building projects. We manage the structural engineering and construction process with strict adherence to safety and quality.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">&#128295;</div> <h3>Maintenance</h3>
+                    <p>Post-construction care. Our "Manutencao" division ensures systems, structures, and finishes remain in peak condition through scheduled upkeep.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="advantages section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span>Why Choose NP</span>
+                <h2 style="color: #fff;">The Multidisciplinary Edge</h2>
+            </div>
+            <div class="adv-grid">
+                <div class="adv-item">
+                    <div class="adv-icon-small">&#10004;</div>
+                    <h4>Lifecycle Management</h4>
+                    <p>We are with you from Design to Build to Maintain. Having one partner for the entire lifecycle reduces costs and communication errors.</p>
+                </div>
+                <div class="adv-item">
+                    <div class="adv-icon-small">&#10004;</div>
+                    <h4>Brasilia Expertise</h4>
+                    <p>Located in Distrito Federal, we understand the unique architectural language and regulatory requirements of the capital region.</p>
+                </div>
+                <div class="adv-item">
+                    <div class="adv-icon-small">&#10004;</div>
+                    <h4>Principal Led</h4>
+                    <p>Under the direct supervision of Nathalia Pimenta, every project benefits from high-level design scrutiny and engineering oversight.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="process section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span>Methodology</span>
+                <h2>From Concept to Care</h2>
+            </div>
+            <div class="process-container">
+                <div class="step">
+                    <div class="step-num">I</div>
+                    <h3>Concept</h3>
+                    <p>We meet to define the architectural vision and engineering feasibility of your project in Brasilia.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">II</div>
+                    <h3>Build</h3>
+                    <p>We execute the construction phase, managing contractors and materials to bring the design to reality.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">III</div>
+                    <h3>Sustain</h3>
+                    <p>After handover, we transition to maintenance protocols to ensure the longevity of the structure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact section-padding">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Start the Conversation</h3>
+                    <p style="color: #ddd; margin-bottom: 30px;">Ready to build or renovate in Brasilia? Contact NP Arquitetura for a comprehensive proposal.</p>
+                    
+                    <div class="info-block">
+                        <span>Location</span>
+                        <p>Brasilia, Distrito Federal<br>Brazil</p>
+                    </div>
+                    <div class="info-block">
+                        <span>Email</span>
+                        <p>info@arquiteturadesignengenharia.info</p>
+                    </div>
+                    <div class="info-block">
+                        <span>Principal</span>
+                        <p>Nathalia Pimenta</p>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Service (e.g. Design, Maintenance)">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-submit">Send Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">NP ARQUITETURA</div>
+            <p>&copy; 2023 NP Arquitetura Design Engenharia Manutencao e Construcao Ltda. All Rights Reserved.</p>
+            <p style="margin-top: 10px; opacity: 0.6;">Brasilia, DF | info@arquiteturadesignengenharia.info</p>
+        </div>
+    </footer>
+
+</body>
+</html>
